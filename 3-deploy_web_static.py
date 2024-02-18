@@ -8,7 +8,7 @@ from fabric.operations import env, put, run
 env.hosts = ['44.210.150.159', '35.173.47.15']
 
 
-def do_pack():
+def wzqdo_pack():
     """Generate an tgz archive from web_static folder"""
     try:
         local("mkdir -p versions")
@@ -20,7 +20,7 @@ def do_pack():
         return None
 
 
-def do_deploy(archive_path):
+def wzqdo_deploy(archive_path):
     """Distribute an archive to web servers"""
     if (os.path.isfile(archive_path) is False):
         return False
@@ -42,10 +42,10 @@ def do_deploy(archive_path):
         return False
 
 
-def deploy():
+def wzqdeploy():
     """Create and distributes an archive to web servers"""
     try:
-        path = do_pack()
-        return do_deploy(path)
+        path = wzqdo_pack()
+        return wzqdo_deploy(path)
     except:
         return False
