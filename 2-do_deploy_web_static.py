@@ -51,5 +51,3 @@ def wzqdo_deploy(archive_path):
 return False
 
 
-
-
